@@ -28,4 +28,4 @@ jobs:
         
     - name: Run tests
       run: mvn test
-      working-directory: project1-introduction-java-junit
+      working-directory: projeto1-introducao-java-junit
