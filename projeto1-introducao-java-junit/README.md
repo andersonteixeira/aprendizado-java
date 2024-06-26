@@ -28,10 +28,10 @@ projeto1-introducao-java-junit/\
 │ └── java/\
 │ └── matematica/\
 │ └── OperacoesMatematicasTest.java\
-└── pom.xml
+└── pom.xml\
 └── README.md
 
-## Aula 1: Estrutura Básica de um Programa Java
+## Passo 1: Estrutura Básica de um Programa Java
 
 ### Conceitos Básicos
 
@@ -42,14 +42,14 @@ Um método é uma função definida dentro de uma classe que realiza uma tarefa 
 
 ### Classe 'OperacoesMatematicas'
 
-Nesta aula, vamos criar uma classe chamada `OperacoesMatematicas` que tem quatro métodos: `somar`, `subtrair`, `multiplicar` e `dividir`.
+Vamos criar uma classe chamada `OperacoesMatematicas` que tem quatro métodos: `somar`, `subtrair`, `multiplicar` e `dividir`.
 
 - **somar**: Recebe dois números e retorna a soma deles.
 - **subtrair**: Recebe dois números e retorna a subtração deles.
 - **multiplicar**: Recebe dois números e retorna a multiplicação deles.
 - **dividir**: Recebe dois números e retorna a divisão deles. Se o divisor for zero, lança uma exceção.
 
-## Aula 2: Testes Unitários com JUnit
+## Passo 2: Testes Unitários com JUnit
 
 ### Introdução ao JUnit
 
