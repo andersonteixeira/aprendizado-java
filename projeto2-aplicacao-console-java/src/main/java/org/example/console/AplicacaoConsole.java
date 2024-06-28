@@ -66,13 +66,16 @@ public class AplicacaoConsole {
     private static void somarDigitos(Scanner scanner) {
         System.out.print("Digite um número: ");
         String input = scanner.nextLine();
-        int soma = input.chars()
-						.filter(Character::isDigit)
-						.map(Character::getNumericValue)
-						.sum();
-
-        System.out.println("\n==========\nSoma dos dígitos: " + BLUE + soma + RESET + "\n==========\n");
-    }
+        if(input.matches("\\d+")){
+			int soma = input.chars()
+					.filter(Character::isDigit)
+					.map(Character::getNumericValue)
+					.sum();
+			System.out.println("\n==========\nSoma dos dígitos: " + BLUE + soma + RESET + "\n==========\n");
+		} else {
+			System.out.println(RED + "Entrada inválida. Por favor, digite um número." + RESET);
+		}
+	}
 
     private static void converterMaiusculas(Scanner scanner) {
         System.out.print("Digite uma string: ");
