@@ -1,4 +1,4 @@
-# Aula: Entendendo a Aplicação Console
+# Entendendo a Aplicação Console
 
 Bem-vindo à nossa aula sobre a aplicação de console em Java! \
 Neste documento, vamos explorar detalhadamente o código da classe `AplicacaoConsole`. \
@@ -119,6 +119,8 @@ Utilizar um `Map` para associar escolhas a operações simplifica a adição de 
 Verificar se a entrada do usuário é válida antes de prosseguir ajuda a evitar erros e melhora a experiência do usuário.
 
 Espero que esta explicação detalhada tenha ajudado a entender cada parte do código. \
+
+Fique à vontade para criar novos testes unitários e realizar novas implementações.
 
 ## Bons estudos e boa programação!
 
