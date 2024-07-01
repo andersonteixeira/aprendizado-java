@@ -9,15 +9,31 @@ public class AplicacaoConsole {
 	public static final String GREEN = "\033[0;32m";
 	public static final String YELLOW = "\033[0;33m";
 	public static final String BLUE = "\033[0;34m";
+	private static int escolha = 1;
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		int escolha = -1;
 
 		Map<String, Runnable> operacoes = Map.of(
-				"1", () -> inverterString(scanner),
-				"2", () -> contarVogais(scanner),
-				"3", () -> somarDigitos(scanner),
-				"4", () -> converterMaiusculas(scanner)
+				"1", () -> {
+					String inverse = inverterString(scanner);
+					System.out.println("\n==========\nString invertida: " + inverse + RESET + "\n==========\n");
+				},
+				"2", () -> {
+				long count = contarVogais(scanner);
+				System.out.println("\n==========\nNúmero de vogais: " + BLUE + count + RESET + "\n==========\n");
+				},
+				"3", () -> {
+				int somar = somarDigitos(scanner);
+				if(somar != 0) {
+					System.out.println("\n==========\nSoma dos dígitos: " + BLUE + somar + RESET + "\n==========\n");
+				} else {
+					System.out.println(RED + "Entrada inválida. Por favor, digite um número." + RESET);
+				}
+					},
+				"4", () -> {
+					String maiuscula = converterMaiusculas(scanner);
+					System.out.println("\n==========\nString em maiúsculas: " + BLUE + maiuscula + RESET + "\n==========\n");
+				}
 		);
 
 		while (escolha != 0) {
@@ -31,7 +47,7 @@ public class AplicacaoConsole {
 
 			if (scanner.hasNextInt()) {
 				escolha = scanner.nextInt();
-				scanner.nextLine();  // Consumir a nova linha
+				scanner.nextLine();
 
 				if (escolha != 0) {
 					operacoes.getOrDefault(String.valueOf(escolha),
@@ -39,7 +55,7 @@ public class AplicacaoConsole {
 				}
 			} else {
 				System.out.println(RED + "Entrada inválida. Por favor, digite um número." + RESET);
-				scanner.nextLine();  // Consumir a entrada inválida
+				scanner.nextLine();
 			}
 		}
 
@@ -47,39 +63,39 @@ public class AplicacaoConsole {
 		scanner.close();
 	}
 
-    private static void inverterString(Scanner scanner) {
+    public static String inverterString(Scanner scanner) {
         System.out.print(BLUE + "Digite uma string: " + RESET);
         String str = scanner.next();
         StringBuilder sb = new StringBuilder(str);
-        System.out.println("\n==========\nString invertida: " + BLUE + sb.reverse() + RESET + "\n==========\n");
+        return sb.reverse().toString();
     }
 
-	private static void contarVogais(Scanner scanner) {
+	public static long contarVogais(Scanner scanner) {
 		System.out.print("Digite uma string: ");
 		String str = scanner.next();
 		long count = str.chars()
 				.filter(c -> "aeiouAEIOU".indexOf(c) != -1)
 				.count();
-		System.out.println("\n==========\nNúmero de vogais: " + BLUE + count + RESET + "\n==========\n");
+		return count;
 	}
 
-    private static void somarDigitos(Scanner scanner) {
+    public static int somarDigitos(Scanner scanner) {
         System.out.print("Digite um número: ");
-        String input = scanner.nextLine();
-        if(input.matches("\\d+")){
-			int soma = input.chars()
-					.filter(Character::isDigit)
-					.map(Character::getNumericValue)
-					.sum();
-			System.out.println("\n==========\nSoma dos dígitos: " + BLUE + soma + RESET + "\n==========\n");
-		} else {
-			System.out.println(RED + "Entrada inválida. Por favor, digite um número." + RESET);
+		String input = scanner.nextLine();
+		int soma = 0;
+		if (!input.matches("\\d+")) {
+			return 0;
 		}
+		for (char c : input.toCharArray()) {
+			soma += Character.getNumericValue(c);
+		}
+		return soma;
 	}
 
-    private static void converterMaiusculas(Scanner scanner) {
+    public static String converterMaiusculas(Scanner scanner) {
         System.out.print("Digite uma string: ");
         String str = scanner.next();
-        System.out.println("\n==========\nString em maiúsculas: " + BLUE + str.toUpperCase() + RESET + "\n==========\n");
+
+        return str.toUpperCase();
     }
 }
