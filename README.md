@@ -34,7 +34,7 @@ aprendizado-java/\
 3. **Aplicação Spring Boot Básica**
    - Status: [ ] Não iniciado | [x] Em andamento | [ ] Finalizado
    - Descrição: Criar uma aplicação simples usando Spring Boot, explorando conceitos básicos de criação de APIs.
-   - Local: [projeto3-aplicacao-springboot](projeto3-aplicacao-springboot)
+   - Local: [projeto3-introducao-spring-boot](projeto3-introducao-spring-boot)
 
 4. **Integração de Banco de Dados com Spring Boot**
    - Status: [x] Não iniciado | [ ] Em andamento | [ ] Finalizado
